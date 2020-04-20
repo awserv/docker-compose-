@@ -1,13 +1,16 @@
 #project 
 #v1.1
 
-version: '1.1'
+  version: '2.2'
+  service:
+     build:
+   volumes:
+         dock:
+  services:
+         build:
+          volumes:
+                 - dock:/home/boxfuse/target/
+             build: prod
 
-services:
-       dock:
-        
-        build: ./dock
-          restart: always
-            build:  
-              context: ./home/ubuntu/dock/
-                 dockerfile: dockerfile
+             ports:
+                   - "8080:8080"
