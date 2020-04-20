@@ -1,0 +1,13 @@
+#project 
+#v1.1
+
+version: '1.1'
+
+services:
+       dock:
+        
+        build: ./dock
+          restart: always
+            build:  
+              context: ./home/ubuntu/dock/
+                 dockerfile: dockerfile
