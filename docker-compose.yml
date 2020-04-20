@@ -1,3 +1,4 @@
+
 #project
 #v3
 
@@ -7,12 +8,10 @@ services:
    work:
       build: work
       volumes:
-       - data-volume:/usr/local/tomcat/webapps
+       - ./data:/usr/local/tomcat/webapps - здесь что не так
    prod:
       build: prod
       volumes:
-       - data-volume:/usr/tomcat
-   ports:
-    - "8080:8080"
-volumes:
-    data-volume:
+       - ./data/usr/tomcat и здесь также
+       ports:
+      - "8080:8080"
