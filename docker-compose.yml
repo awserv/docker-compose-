@@ -1,8 +1,9 @@
 #v3.8
-#docker-compose
+# docker-compose
 
 version: '3.8'
 services:
+  # workdir: ./dock
   work:
      build: ./dock/work
      volumes:
