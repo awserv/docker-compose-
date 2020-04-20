@@ -7,14 +7,14 @@ services:
   work:
      build: ./dock/work
      volumes:
-      - war_volume:/usr/local/tomcat/webapps
+      - data_volume:/usr/local/tomcat/webapps
   prod:
      image: tomcat
      volumes:
-      - war_volume:/usr/local/tomcat/webapps
+      - data_volume:/usr/local/tomcat/webapps
      ports:
       - "8080:8080"
-     restart: always
+     restart: alway
    volumes:
-      war_volume:
+      data_volume:
 # docker-compose up -d
