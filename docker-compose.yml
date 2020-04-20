@@ -1,17 +1,17 @@
+#v3.8
 
-#project
-#v3
-
-version: "3.8"
-
+version: '3.8'
 services:
-   work:
-      build: work
-      volumes:
-       - ./data:/usr/local/tomcat/webapps - здесь что не так
-   prod:
-      build: prod
-      volumes:
-       - ./data/usr/tomcat и здесь также
-       ports:
+  work:
+     build: ./dock/work
+     volumes:
+      - war_volume:/usr/local/tomcat/webapps
+  prod:
+     image: tomcat
+     volumes:
+      - war_volume:/usr/local/tomcat/webapps
+     ports:
       - "8080:8080"
+     restart: always
+   volumes:
+      war_volume:
