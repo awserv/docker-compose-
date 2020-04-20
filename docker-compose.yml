@@ -1,16 +1,18 @@
-#project 
-#v1.1
+#project
+#v3
 
-  version: '2.2'
-  service:
-     build:
-   volumes:
-         dock:
-  services:
-         build:
-          volumes:
-                 - dock:/home/boxfuse/target/
-             build: prod
+version: "3.8"
 
-             ports:
-                   - "8080:8080"
+services:
+   work:
+      build: work
+      volumes:
+       - data-volume:/usr/local/tomcat/webapps
+   prod:
+      build: prod
+      volumes:
+       - data-volume:/usr/tomcat
+   ports:
+    - "8080:8080"
+volumes:
+    data-volume:
