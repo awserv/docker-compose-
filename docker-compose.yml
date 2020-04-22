@@ -14,7 +14,7 @@ services:
       - data_volume:/usr/local/tomcat/webapps
      ports:
       - "8080:8080"
-     restart: alway
+     restart: always
    volumes:
       data_volume:
 # docker-compose up -d
